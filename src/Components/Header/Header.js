@@ -15,7 +15,9 @@ function Header() {
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
-        <div className="brandName">
+        <div className="brandName" onClick={() => {
+          history.push('/')
+        }}>
           <OlxLogo></OlxLogo>
         </div>
         <div className="placeSearch">
@@ -48,7 +50,11 @@ function Header() {
           <hr />
         </div>
         <span>{user ? `Welcome ${user.displayName}` : ""}</span>
-        <div className="sellMenu">
+        <div onClick={() => {
+
+          user && history.push('/create');
+
+        }} className="sellMenu">
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>

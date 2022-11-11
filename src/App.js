@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Singup from './Pages/Signup'
 import Login from './Pages/Login'
 import Create from './Pages/Create'
+import ViewPost from './Pages/ViewPost'
+
 import './App.css';
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
+import Post from './store/postContext';
 /**
  * ?  =====Import Components=====
  */
@@ -21,23 +24,27 @@ function App() {
   })
   return (
     <div>
-      <Router>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/singup'>
-          <Singup />
-        </Route>
-        <Route path='/login'>
-          <Login />
-        </Route>
-        <Route path='/create'>
-          <Create />
-        </Route>
-      </Router>
+      <Post>
+        <Router>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/singup'>
+            <Singup />
+          </Route>
+          <Route path='/login'>
+            <Login />
+          </Route>
+          <Route path='/create'>
+            <Create />
+          </Route>
+          <Route path='/view'>
+            <ViewPost />
+          </Route>
 
+        </Router>
+      </Post>
     </div>
   );
 }
-
 export default App;

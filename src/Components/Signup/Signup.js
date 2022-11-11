@@ -29,7 +29,8 @@ export default function Signup() {
         })
       ])
     }).catch((err) => {
-      console.log(err + "  error");
+      alert(err.message)
+
     })
   }
 
@@ -89,7 +90,10 @@ export default function Signup() {
           <br />
           <button>Signup</button>
         </form>
-        <a>Login</a>
+        <div onClick={() => {
+          history.push('/login')
+        }}><a>Login</a></div>
+
       </div>
     </div>
   );
